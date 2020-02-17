@@ -1,0 +1,103 @@
+
+ 
+
+# Tutorials 
+All Rasberry Pi IoT PostgreSQL SQL 
+22 August 2019
+/
+Tutorials
+# How to install psql on Mac, Ubuntu, Debian, Windows
+Introduction
+psql is the standard command line interface for interacting with a PostgreSQL or TimescaleDB instance. Here we explain how to install psql on various platforms.
+Before you start
+Before you start, you should confirm that you don’t already have psql installed. In fact, if you’ve ever installed Postgres or TimescaleDB before, you likely already have psql installed.
+psql --version
+Install on MacOS using Homebrew
+First, install the Brew Package Manager 
+Second, update brew. From your command line, run the following commands:
+brew doctor
+brew update
+brew install libpq
+Finally, symlink psql (and other libpq tools) into /usr/local/bin:
+brew link --force libpq ail
+Install on Ubuntu 16.04,18.04 and Debian 9,10
+Install on Ubuntu and Debian using the apt package manager:
+sudo apt-get update
+sudo apt-get install postgresql-client
+Note: That this only installs the psql client and not the PostgreSQL database. 
+Install Windows 10
+We recommend using the installer from PostgreSQL.org.
+Last step: Connect to your PostgreSQL server
+Let’s confirm that psql is installed:
+psql --version
+Now, in order to connect to your PostgreSQL server, we’ll need the following connection params:
+Hostname
+Port
+Username
+Password
+Database name
+There are two ways to use these params.
+Option 1:
+psql -h [HOSTNAME] -p [PORT] -U [USERNAME] -W -d [DATABASENAME]
+Once you run that command, the prompt will ask you for your password. (Which we specified with the -W flag.)
+Option 2:
+psql postgres://[USERNAME]:[PASSWORD]@[HOSTNAME]:[PORT]/[DATABASENAME]?sslmode=require
+Congrats! Now you have connected via psql.
+Want the latest posts, time-series tutorials, and more?
+Sign up for the Timescale Newsletter!
+ 
+Sign up
+ 
+Ajay Kulkarni
+Ajay Kulkarni is a member of the Timescale team. 
+Read More from this author
+
+— Timescale Blog —
+Tutorials
+
+
+See all 5 posts → 
+ 
+Engineering
+How to benchmark IoT time-series workloads in a production environment
+New IoT dataset available for benchmarking TimescaleDB, MongoDB, InfluxDB, Cassandra & others.
+Bob Boule 
+ 
+11 min read
+ 
+Engineering
+Building a distributed time-series database on PostgreSQL
+Today we are announcing the distributed version of TimescaleDB, which is currently in private beta (public version slated for later this year).
+Mike Freedman 
+ 
+Erik Nordström 
+ 
+17 min read
+Product
+Timescale Cloud 
+TimescaleDB 
+Documentation 
+Cloud Pricing 
+Subscriptions 
+Resources
+Learn 
+Blog 
+Tutorials 
+Webinars 
+Security 
+Community
+GitHub 
+Stack Overflow 
+Slack 
+Email 
+Company
+Newsroom 
+About Us 
+Careers 
+Contact 
+
+
+
+
+2020 © Timescale, Inc. All Rights Reserved.
+Privacy Policy Terms of Service 
